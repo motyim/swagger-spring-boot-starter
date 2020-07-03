@@ -1,5 +1,6 @@
 package me.motyim.swagger.autoconfig;
 
+import me.motyim.swagger.properties.SwaggerProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
