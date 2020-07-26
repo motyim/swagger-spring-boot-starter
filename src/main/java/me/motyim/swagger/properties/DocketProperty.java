@@ -9,9 +9,10 @@ public class DocketProperty {
     private InfoProperties info;
     private String basePackage;
     private String path;
+    @NestedConfigurationProperty
+    private ApiKeyProperty apiKey;
 
     public DocketProperty() {
-        this.info = new InfoProperties();
         this.basePackage = "";
         this.path = "";
     }

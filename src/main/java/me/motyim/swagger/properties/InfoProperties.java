@@ -30,7 +30,6 @@ public class InfoProperties implements Supplier<ApiInfo> {
         this.termsOfServiceUrl = DEFAULT.getTermsOfServiceUrl();
         this.license = DEFAULT.getLicense();
         this.licenseUrl = DEFAULT.getLicenseUrl();
-        this.contact = new ContactProperty();
     }
 
 

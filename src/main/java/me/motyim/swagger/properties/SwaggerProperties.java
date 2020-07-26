@@ -3,12 +3,14 @@ package me.motyim.swagger.properties;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
 @Data
+@Component
 @ConfigurationProperties(prefix = "spring.swagger")
 public class SwaggerProperties {
 
@@ -21,8 +23,5 @@ public class SwaggerProperties {
     @NestedConfigurationProperty
     private Map<String, DocketProperty> dockets = new HashMap<>();
 
-    public SwaggerProperties() {
-        this.info = new InfoProperties();
-    }
 
 }

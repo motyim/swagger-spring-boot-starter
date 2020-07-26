@@ -1,5 +1,6 @@
 package me.motyim.swagger.autoconfig;
 
+import com.google.common.collect.Lists;
 import me.motyim.swagger.properties.DocketProperty;
 import me.motyim.swagger.properties.InfoProperties;
 import me.motyim.swagger.properties.SwaggerProperties;
@@ -17,8 +18,12 @@ import org.springframework.plugin.core.OrderAwarePluginRegistry;
 import org.springframework.plugin.core.PluginRegistry;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiKey;
+import springfox.documentation.service.AuthorizationScope;
+import springfox.documentation.service.SecurityReference;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.DocumentationPlugin;
+import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -64,7 +69,8 @@ public class SwaggerAutoConfiguration {
                             .select()
                             .apis(RequestHandlerSelectors.basePackage(value.getBasePackage()))
                             .paths(PathSelectors.ant(value.getPath()))
-                            .build();
+                            .build()
+                            .securitySchemes(Lists.newArrayList(value.getApiKey().get()));
                     plugins.add(build);
 
                 }
@@ -73,5 +79,5 @@ public class SwaggerAutoConfiguration {
         log.info("Register swagger-dockets");
         return OrderAwarePluginRegistry.create(plugins);
     }
-    
+
 }
