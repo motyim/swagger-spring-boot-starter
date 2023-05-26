@@ -18,7 +18,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.15</spring-boot.version>
         <springfox-version>2.9.2</springfox-version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
